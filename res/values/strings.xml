@@ -25,5 +25,7 @@
     <string name="title_activity_edit_friends_activiy">Edit Friends</string>
     <string name="title_activity_edit_friends">Edit Friends</string>
     <string name="error_title">We\'re Sorry</string>
+    <string name="title_activity_recipients">Choose Recipients</string>
+    <string name="empty_recipients_list_message">Choose some friends first!</string>
 
 </resources>
