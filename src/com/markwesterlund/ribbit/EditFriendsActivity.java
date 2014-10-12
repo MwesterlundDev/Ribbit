@@ -6,8 +6,6 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -101,7 +99,7 @@ public class EditFriendsActivity extends ListActivity {
 		});
 	}
 	
-	
+	/*
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// Handle action bar item clicks here. The action bar will
@@ -113,7 +111,7 @@ public class EditFriendsActivity extends ListActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+	*/
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
