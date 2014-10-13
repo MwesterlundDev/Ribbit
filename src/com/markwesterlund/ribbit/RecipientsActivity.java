@@ -2,8 +2,8 @@ package com.markwesterlund.ribbit;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.app.ListActivity;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseFile;
@@ -120,7 +121,7 @@ public class RecipientsActivity extends ListActivity {
 		int id = item.getItemId();
 		if (id == R.id.action_send) {
 			
-		
+			setProgressBarIndeterminateVisibility(true);
 			ParseObject message = createMessage();
 			if(message == null){
 				// error
@@ -196,6 +197,7 @@ public class RecipientsActivity extends ListActivity {
 			
 			@Override
 			public void done(ParseException e) {
+				setProgressBarIndeterminateVisibility(false);
 				if (e == null) {
 					// success!!
 					Toast.makeText(RecipientsActivity.this, R.string.success_message, Toast.LENGTH_LONG).show();

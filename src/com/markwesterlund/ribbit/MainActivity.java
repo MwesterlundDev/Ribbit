@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
 import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.FragmentTransaction;
@@ -24,6 +25,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
+
 import com.parse.ParseAnalytics;
 import com.parse.ParseUser;
 
@@ -225,6 +227,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 					.setTabListener(this));
 		}
 	}
+	
+
 	
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
