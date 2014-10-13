@@ -1,5 +1,6 @@
 package com.markwesterlund.ribbit;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Intent;
@@ -62,12 +63,16 @@ public class InboxFragment extends android.app.ListFragment {
 						i++;
 					
 					}
-					
-					MessageAdapter adapter = new MessageAdapter(
-							getListView().getContext(),
-							mMessages);
-					setListAdapter(adapter);
-					
+					if( getListView().getAdapter() == null ) {
+						MessageAdapter adapter = new MessageAdapter(
+								getListView().getContext(),
+								mMessages);
+						setListAdapter(adapter);
+					} else {
+						// refill the adapter!
+						
+						((MessageAdapter)getListView().getAdapter()).refill(mMessages);
+					}
 				}
 				
 			}
@@ -99,8 +104,25 @@ public class InboxFragment extends android.app.ListFragment {
 			startActivity(intent);
 		}
 			
+		// Delete it!
 		
+		List<String> ids = message.getList(ParseConstants.KEY_RECICPIENT_IDS);
 		
+		if(ids.size() == 1) {
+			// Last Recipient -delete the whole thing
+			
+			message.deleteInBackground();
+		}
+		else
+		{
+			// remove user
+			ids.remove(ParseUser.getCurrentUser().getObjectId());
+			ArrayList<String> idsToRemove = new ArrayList<String>();
+			idsToRemove.add(ParseUser.getCurrentUser().getObjectId());
+			message.removeAll(ParseConstants.KEY_RECICPIENT_IDS, idsToRemove);
+			
+			message.saveInBackground();
+		}
 		
 	}
 	
