@@ -1,4 +1,4 @@
-package com.markwesterlund.ribbit;
+package com.markwesterlund.ribbit.ui;
 
 import java.util.List;
 
@@ -10,6 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import com.markwesterlund.ribbit.R;
+import com.markwesterlund.ribbit.R.layout;
+import com.markwesterlund.ribbit.R.string;
+import com.markwesterlund.ribbit.utils.ParseConstants;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;

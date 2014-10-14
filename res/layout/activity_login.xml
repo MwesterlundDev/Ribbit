@@ -3,7 +3,7 @@
     style="@style/AuthBackground"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    tools:context="com.markwesterlund.ribbit.LoginActivity"
+    tools:context="com.markwesterlund.ribbit.ui.LoginActivity"
     tools:ignore="TextFields" >
 
     <ImageView

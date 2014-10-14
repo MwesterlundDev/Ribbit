@@ -1,4 +1,4 @@
-package com.markwesterlund.ribbit;
+package com.markwesterlund.ribbit.utils;
 
 public final class ParseConstants {
 	

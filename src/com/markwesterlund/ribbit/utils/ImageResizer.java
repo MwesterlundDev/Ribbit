@@ -1,4 +1,4 @@
-package com.markwesterlund.ribbit;
+package com.markwesterlund.ribbit.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

@@ -1,6 +1,12 @@
-package com.markwesterlund.ribbit;
+package com.markwesterlund.ribbit.adapters;
 
 import java.util.Locale;
+
+import com.markwesterlund.ribbit.R;
+import com.markwesterlund.ribbit.R.drawable;
+import com.markwesterlund.ribbit.R.string;
+import com.markwesterlund.ribbit.ui.FriendsFragment;
+import com.markwesterlund.ribbit.ui.InboxFragment;
 
 import android.app.Fragment;
 import android.app.FragmentManager;

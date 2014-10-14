@@ -1,4 +1,4 @@
-package com.markwesterlund.ribbit;
+package com.markwesterlund.ribbit.adapters;
 
 import java.util.List;
 
@@ -10,6 +10,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.markwesterlund.ribbit.R;
+import com.markwesterlund.ribbit.R.drawable;
+import com.markwesterlund.ribbit.R.id;
+import com.markwesterlund.ribbit.R.layout;
+import com.markwesterlund.ribbit.utils.ParseConstants;
 import com.parse.ParseObject;
 
 public class MessageAdapter extends ArrayAdapter<ParseObject> {
