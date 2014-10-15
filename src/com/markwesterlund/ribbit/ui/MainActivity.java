@@ -27,11 +27,6 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.markwesterlund.ribbit.R;
-import com.markwesterlund.ribbit.R.array;
-import com.markwesterlund.ribbit.R.id;
-import com.markwesterlund.ribbit.R.layout;
-import com.markwesterlund.ribbit.R.menu;
-import com.markwesterlund.ribbit.R.string;
 import com.markwesterlund.ribbit.adapters.SectionsPagerAdapter;
 import com.markwesterlund.ribbit.utils.ParseConstants;
 import com.parse.ParseAnalytics;

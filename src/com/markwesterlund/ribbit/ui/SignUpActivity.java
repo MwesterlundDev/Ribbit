@@ -11,9 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.markwesterlund.ribbit.R;
-import com.markwesterlund.ribbit.R.id;
-import com.markwesterlund.ribbit.R.layout;
-import com.markwesterlund.ribbit.R.string;
+import com.markwesterlund.ribbit.RibbitApplication;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -93,6 +91,10 @@ public class SignUpActivity extends Activity {
 							
 							if(e == null){
 								// Success!
+								
+								RibbitApplication.updateParseInstallation(
+										ParseUser.getCurrentUser());
+								
 								Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
 								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -6,13 +6,15 @@ import java.util.List;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.markwesterlund.ribbit.R;
-import com.markwesterlund.ribbit.R.layout;
 import com.markwesterlund.ribbit.adapters.MessageAdapter;
 import com.markwesterlund.ribbit.utils.ParseConstants;
 import com.parse.FindCallback;
@@ -26,13 +28,21 @@ public class InboxFragment extends android.app.ListFragment {
 
 
 	protected List<ParseObject> mMessages; 
+	protected SwipeRefreshLayout mSwipeRefreshLayout;
+	
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.fragment_inbox, container,
 				false);
-		
+		mSwipeRefreshLayout = (SwipeRefreshLayout)rootView.findViewById(R.id.swipeRefreshLayout);
+		mSwipeRefreshLayout.setOnRefreshListener(mOnRefreshListener);
+		mSwipeRefreshLayout.setColorSchemeResources(
+				R.color.swipeRefresh1, 
+				R.color.swipeRefresh2,
+				R.color.swipeRefresh3, 
+				R.color.swipeRefresh4);
 		
 		return rootView;
 	}
@@ -43,6 +53,12 @@ public class InboxFragment extends android.app.ListFragment {
 		super.onResume();
 		getActivity().setProgressBarIndeterminateVisibility(true);
 		
+		retrieveMessages();
+		
+	}
+
+
+	private void retrieveMessages() {
 		ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(ParseConstants.CLASS_MESSAGES);
 		
 		query.whereEqualTo(ParseConstants.KEY_RECICPIENT_IDS, ParseUser.getCurrentUser().getObjectId());
@@ -53,6 +69,10 @@ public class InboxFragment extends android.app.ListFragment {
 			@Override
 			public void done(List<ParseObject> messages, ParseException e) {
 				getActivity().setProgressBarIndeterminateVisibility(false);
+				
+				if(mSwipeRefreshLayout.isRefreshing()){
+					mSwipeRefreshLayout.setRefreshing(false);
+				}
 				
 				if(e == null){
 					//Success!!  We found messages!
@@ -81,7 +101,6 @@ public class InboxFragment extends android.app.ListFragment {
 				
 			}
 		});
-		
 	}
 	
 	@Override
@@ -129,5 +148,14 @@ public class InboxFragment extends android.app.ListFragment {
 		}
 		
 	}
+	
+	protected OnRefreshListener mOnRefreshListener = new OnRefreshListener() {
+		
+		@Override
+		public void onRefresh() {
+			retrieveMessages();
+			
+		}
+	};
 	
 }

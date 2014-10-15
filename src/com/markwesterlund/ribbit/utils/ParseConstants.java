@@ -8,7 +8,7 @@ public final class ParseConstants {
 	// Field Names
 	public static final String KEY_USERNAMES = "username";
 	public static final String KEY_FRIENDS_RELATION = "freindsRelation";
-	
+	public static final String KEY_USER_ID = "userId";
 	public static final String KEY_RECICPIENT_IDS = "recipientIds";
 	public static final String KEY_SENDER_ID = "senderId";
 	public static final String KEY_SENDER_NAME = "senderName";
@@ -18,5 +18,7 @@ public final class ParseConstants {
 	
 	public static final String TYPE_IMAGE = "image";
 	public static final String TYPE_VIDEO = "video";
+	
+	
 
 }

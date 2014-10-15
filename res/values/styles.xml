@@ -32,8 +32,20 @@
         <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Ribbit</item>
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
         <item name="android:actionOverflowButtonStyle">@style/Theme.Ribbit.Overflow</item>
+        <item name="android:listViewStyle">@style/Theme.Ribbit.LightPurpleBackground</item>
+        <item name="android:gridViewStyle">@style/Theme.Ribbit.LightPurpleBackground.GridView</item>
     </style>
-    
+
+    <style name="Theme.Ribbit.LightPurpleBackground">
+        <item name="android:padding">@dimen/user_grid_spacing</item>
+        <item name="android:divider">@null</item>
+    </style>
+
+    <style name="Theme.Ribbit.LightPurpleBackground.GridView">
+        <item name="android:background">@color/light_purple_background</item>
+        <item name="android:divider">@null</item>
+"</style>
+
     <style name="Theme.Ribbit.Overflow" parent="@android:style/Widget.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_menu_overflow</item>
     </style>
@@ -46,12 +58,10 @@
         <item name="android:titleTextStyle">@style/ActionBar.Solid.Ribbit.TitleTextStyle</item>
     </style>
 
-    <style name="ActionBar.Solid.Ribbit.TitleTextStyle" 
-        parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+    <style name="ActionBar.Solid.Ribbit.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
         <item name="android:textColor">@color/text_color</item>
-        
     </style>
-    
+
     <style name="ActionBar.Transparent.Ribbit" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">@drawable/ab_transparent_ribbit</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Ribbit</item>
@@ -88,8 +98,6 @@
         <item name="android:popupMenuStyle">@style/PopupMenu.Ribbit</item>
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Ribbit</item>
     </style>
-
-    
 
     <style name="AuthBackground">
         <item name="android:background">@drawable/background_fill</item>
@@ -157,6 +165,15 @@
         <item name="android:textSize">13sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="GridImage">
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:scaleType">fitXY</item>
     </style>
 
 </resources>
